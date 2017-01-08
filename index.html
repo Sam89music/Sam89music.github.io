@@ -2,16 +2,16 @@
   <head>
     <title>Testing</title>
     <script>
-      function changeColor(red){
+      function changeColorRed(){
         document.getElementById("content").style.color = "red";
       }
-      function changeColor(orange){
+      function changeColorOrange(){
         document.getElementById("content").style.color = "orange";
       }
-      function changeColor(yellow){
+      function changeColor(){
         document.getElementById("content").style.color = "yellow";
       }
-      function changeColor(green){
+      function changeColor(){
         document.getElementById("content").style.color = "green";
       }
     </script>
@@ -24,10 +24,10 @@
   <body>  
     <div id="greeting" style="color:lime;">
       Hello
-      <input type="button" value="Red" onclick="changeColor(red);">
-      <input type="button" value="Red" onclick="changeColor(orange);">
+      <input type="button" value="Red" onclick="changeColorRed();">
+      <input type="button" value="Red" onclick="changeColorOrange();">
     </div>
-    <div id="content" style="color:red;"><!--the button applies to this-->
+    <div id="content;"><!--the button applies to this-->
       <p>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png">
       </p>
