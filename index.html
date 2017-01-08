@@ -2,17 +2,11 @@
   <head>
     <title>Testing</title>
     <script>
-      function changeColorRed(){
+      function changeColorToRed(){
         document.getElementById("content").style.color = "red";
       }
-      function changeColorOrange(){
+      function changeColorToOrange(){
         document.getElementById("content").style.color = "orange";
-      }
-      function changeColor(){
-        document.getElementById("content").style.color = "yellow";
-      }
-      function changeColor(){
-        document.getElementById("content").style.color = "green";
       }
     </script>
     <style>
@@ -22,10 +16,10 @@
     </style>
   </head>
   <body>  
-    <div id="greeting" style="color:lime;">
+    <div id="greeting" style="color:red;">
       Hello
-      <input type="button" value="Red" onclick="changeColorRed();">
-      <input type="button" value="Orange" onclick="changeColorOrange();">
+      <input type="button" value="Red" onclick="changeColorToRed()";>
+      <input type="button" value="Orange" onclick="changeColorToOrange()";>
     </div>
     <div id="content;"><!--the button applies to this-->
       <p>
