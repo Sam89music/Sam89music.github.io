@@ -4,3 +4,6 @@ body {
 .list { 
   text-align: center; list-style-position:inside;
 }
+content {
+  color: red;
+}
