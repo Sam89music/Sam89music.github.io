@@ -11,7 +11,7 @@ function changeColorToGreen(){
   document.getElementById("content").style.color = "green";
 }
 function changeColorToLime(){
-  document.getElementById("content").style.color = "lime"
+  document.getElementById("content").style.color = "lime";
 }
 function changeColorToBlue(){
   document.getElementById("content").style.color = "blue";
