@@ -1,21 +1,21 @@
 function changeColorToRed(){
-  document.getElementById("content").style.color = "red";
+  document.getElementById(".content").style.color = "red";
 }
 function changeColorToOrange(){
-  document.getElementById("content").style.color = "orange";
+  document.getElementById(".content").style.color = "orange";
 }
 function changeColorToYellow(){
-  document.getElementById("content").style.color = "yellow";
+  document.getElementById(".content").style.color = "yellow";
 }
 function changeColorToGreen(){
-  document.getElementById("content").style.color = "green";
+  document.getElementById(".content").style.color = "green";
 }
 function changeColorToLime(){
-  document.getElementById("content").style.color = "lime"
+  document.getElementById(".content").style.color = "lime"
 }
 function changeColorToBlue(){
-  document.getElementById("content").style.color = "blue";
+  document.getElementById(".content").style.color = "blue";
 }
 function changeColorToPurple(){
-  document.getElementById("content").style.color = "purple";
+  document.getElementById(".content").style.color = "purple";
 }
