@@ -12,3 +12,9 @@ body {
   margin:200px;
   padding:20px; 
 }
+#navigation{
+  background-color:#bfbfbf;
+  border-radius:25px;
+  margin:150px;
+  padding:20px;
+}
