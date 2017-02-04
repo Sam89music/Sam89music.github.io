@@ -46,4 +46,23 @@ function checkAnswer(){
 }
 
 //Gallery
+var pics = ["http://img.kpopmap.com/2015/11/2015-bts-v-legendary-picture-2.jpg",
+            "http://68.media.tumblr.com/871f03b589d571aecdf8a571f312cbdf/tumblr_inline_nny1p7apHQ1qze0xk_400.jpg",
+            "http://cdn0.dailydot.com/cache/be/da/bedacffded0c1c2e1772f3bf9cac925b.jpg"
+           ];
+var picIndex = 0;
+
+function goLeft(){
+  if(picIndex > 0){
+    picIndex = picIndex - 1;
+    document.getElementById("pic").src=pics[picIndex];
+  } 
+}
+
+function goRight(){
+  if(picIndex < (pic.length -1)){
+    picIndex = picIndex + 1;
+    document.getElementById("pic").src=pics[picIndex];
+  }
+}
 

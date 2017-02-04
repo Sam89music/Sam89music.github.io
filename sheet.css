@@ -21,3 +21,7 @@ body {
   margin:2px;
   padding:15px;
 }
+
+#gallery img{
+  height: 400px;
+}
