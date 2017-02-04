@@ -53,7 +53,7 @@ var pics = ["http://img.kpopmap.com/2015/11/2015-bts-v-legendary-picture-2.jpg",
 var picIndex = 0;
 
 function goLeft(){
-  if(picIndex > 0){
+  if(picIndex > 0 ){
     picIndex = picIndex - 1;
     document.getElementById("pic").src=pics[picIndex];
   }
@@ -61,9 +61,8 @@ function goLeft(){
 }//end of function
 
 function goRight(){
-  if(picIndex < (pic.length -1)){
+  if(picIndex < (pics.length - 1)){
     picIndex = picIndex + 1;
     document.getElementById("pic").src=pics[picIndex];
   }
 }
-
