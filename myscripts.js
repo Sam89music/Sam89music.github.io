@@ -56,8 +56,9 @@ function goLeft(){
   if(picIndex > 0){
     picIndex = picIndex - 1;
     document.getElementById("pic").src=pics[picIndex];
-  } 
-}
+  }
+  
+}//end of function
 
 function goRight(){
   if(picIndex < (pic.length -1)){
