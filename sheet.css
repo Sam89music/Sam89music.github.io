@@ -29,7 +29,7 @@ body {
 #gallery input[type=button]{
   background-color: orange;
   font-size:bolder;
-  padding:15px;
+  padding:7px;
   margin:4px;
   border-radius:15px;
 }
