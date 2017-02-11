@@ -9,6 +9,16 @@
   line-height:100px;
 }
 
+#players{
+  float:left;
+}
+
+#board{
+  float:right;
+  width:350px;
+  height:350pc;
+}
+
 body {
   text-align:center; 
   background-image:url("http://i.imgur.com/hgVJGW5.png");
