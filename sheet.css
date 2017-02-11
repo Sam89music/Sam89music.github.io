@@ -1,11 +1,24 @@
+.box{
+  border-style:solid;
+  width:100px;
+  height:100px;
+  float:left;
+  text-align:center;
+  background-color:orange;
+  vertical-align:middle;
+  line-height:100px;
+}
+
 body {
   text-align:center; 
   background-image:url("http://i.imgur.com/hgVJGW5.png");
 }
+
 .list { 
   text-align:center; 
   list-style-position:inside;
 }
+
 #container{
   background-color:#40e0d0;
   border-radius:25px;
@@ -15,6 +28,7 @@ body {
   margin-bottom:20px;
   padding:20px; 
 }
+
 #navigation{
   background-color:#bfbfbf;
   border-radius:25px;
@@ -24,7 +38,6 @@ body {
 
 #gallery img{
   height: 400px;
-  max-width: 95%;
 }
 
 #gallery input[type=button]{
