@@ -91,7 +91,7 @@ function makeMove(divLocation){
   }
   
   if(checkWinner()){
-    document.getElementById("notes").innerHTML=character + "Wins!";
+    document.getElementById("notes").innerHTML=character + " wins!";
   }
 }
 
