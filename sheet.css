@@ -4,7 +4,7 @@
   height:100px;
   float:left;
   text-align:center;
-  background-color:orange;
+  background-color:#bfbfbf;
   vertical-align:middle;
   line-height:100px;
 }
@@ -26,9 +26,10 @@
   padding:50px;
   margin-left:auto;
   margin-right:auto;
+  margin-botton:25px;
+  margin-top:25px;
   border-radius:25px;
   background-color:orange;
-  margin-botton:25px;
 }
 
 body {
