@@ -24,7 +24,7 @@ body {
 
 #gallery img{
   height: 400px;
-  max-width: 90%;
+  max-width: 95%;
 }
 
 #gallery input[type=button]{
