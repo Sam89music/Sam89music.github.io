@@ -90,10 +90,24 @@ function makeMove(divLocation){
       "<p> Try Another Spot! </p>";
   }
   
+  if(checkWinner()){
+    document.getElementById("notes").innerHTML=character + "Wins!";
+  }
+}
+
+function checkWinner(){
+  var r1c1 = document.getElementById("row1col1").innerHTML;
+  var r1c2 = document.getElementById("row1col2").innerHTML;
+  var r1c3 = document.getElementById("row1col3").innerHTML;
+  var r2c1 = document.getElementById("row1col1").innerHTML;
+  var r2c2 = document.getElementById("row1col2").innerHTML;
+  var r2c3 = document.getElementById("row1col3").innerHTML;
+  var r3c1 = document.getElementById("row1col1").innerHTML;
+  var r3c2 = document.getElementById("row1col2").innerHTML;
+  var r3c3 = document.getElementById("row1col3").innerHTML;
   
   
 }
-
 
 
 
