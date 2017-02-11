@@ -65,3 +65,37 @@ function goRight(){
     document.getElementById("pic").src=pics[picIndex];
   }
 }
+
+//Tick Tack Toe
+var character = "";
+
+function chooseX(){
+  character = 'X'
+}
+
+function chooseO(){
+  character = 'O';
+}
+
+function makeMove(divLocation){
+  
+  var insideDiv = document.getElementById(divLocation).innerHTML;
+  
+  if(insideDiv === ""){
+    document.getElementById(divLocation).innerHTML=character;
+    document.getElementById("notes").innerHTML="";
+  }
+  else{
+    document.getElementById("notes").innerHTML="Already Made a Move Here" +
+      "<p> Try Another Spot! </p>";
+  }
+  
+  
+  
+}
+
+
+
+
+
+
