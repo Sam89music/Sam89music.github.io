@@ -19,6 +19,18 @@
   height:350pc;
 }
 
+#game{
+  border-style:solid;
+  width:600px;
+  height:400px;
+  padding:50px;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:25px;
+  background-color:orange;
+  margin-botton:25px;
+}
+
 body {
   text-align:center; 
   background-image:url("http://i.imgur.com/hgVJGW5.png");
