@@ -106,7 +106,20 @@ function checkWinner(){
   var r3c2 = document.getElementById("row1col2").innerHTML;
   var r3c3 = document.getElementById("row1col3").innerHTML;
   
-  
+  if(r1c1 == r1c2 && r1c1 == r1c3 && r1c1 !== "" ||
+     r2c1 == r2c2 && r2c1 == r2c3 && r2c1 !== "" ||
+     r3c1 == r3c2 && r3c1 == r3c3 && r3c1 !== "" || 
+     r1c1 == r2c1 && r1c1 == r3c1 && r1c1 !== "" ||
+     r1c2 == r2c2 && r1c2 == r3c2 && r1c2 !== "" ||
+     r1c3 == r2c3 && r1c3 == r3c3 && r1c3 !== "" || 
+     r1c1 == r2c2 && r1c1 == r3c3 && r1c1 !== "" || 
+     r1c3 == r2c2 && r1c3 == r3c3 && r1c3 !== "" ){
+    return true;
+  }
+    else{
+      return false;
+    }
+     
 }
 
 
