@@ -70,7 +70,7 @@ body {
 }
 
 #gallery input[type=button]{
-  background-color: orange;
+  background-color:orange;
   font-size:bolder;
   padding:7px;
   margin:4px;
@@ -79,10 +79,51 @@ body {
 
 /* 2048 */
 
-.scores {
-  float: right;
+#heading{
+  height:200px;
+  width:600px;
+}
+
+.scoreBoard {
+  height:100px;
+  width:200px;
+  float:right;
 }
 
 .score {
-  background-color: #bbada0;
+  height:50px;
+  width:100px;
 }
+
+.best {
+  height:50px;
+  width:100px;
+}
+
+#2048Board {
+  margin-left:auto;
+  margin-right:auto;
+  width:410px;
+  height:410px;
+}
+
+.scores{
+  float:right;
+  margin:20px;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:10px;
+  padding-bottom:10px;
+  background-color:#bbada0;
+  border-radius:7px;
+}
+
+
+
+
+
+
+
+
+
+
