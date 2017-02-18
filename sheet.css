@@ -1,3 +1,34 @@
+/* whole page */
+
+body {
+  text-align:center; 
+  background-image:url("http://i.imgur.com/hgVJGW5.png");
+}
+
+#container{
+  background-color:#40e0d0;
+  border-radius:25px;
+  margin-left:250px;
+  margin-right:250px;
+  margin-top:20px;
+  margin-bottom:20px;
+  padding:20px; 
+}
+
+#navigation{
+  background-color:#bfbfbf;
+  border-radius:25px;
+  margin:2px;
+  padding:15px;
+}
+
+.list { 
+  text-align:center; 
+  list-style-position:inside;
+}
+
+
+/* ticktacktoe */
 .box{
   border-style:solid;
   width:100px;
@@ -32,32 +63,7 @@
   background-color:orange;
 }
 
-body {
-  text-align:center; 
-  background-image:url("http://i.imgur.com/hgVJGW5.png");
-}
-
-.list { 
-  text-align:center; 
-  list-style-position:inside;
-}
-
-#container{
-  background-color:#40e0d0;
-  border-radius:25px;
-  margin-left:250px;
-  margin-right:250px;
-  margin-top:20px;
-  margin-bottom:20px;
-  padding:20px; 
-}
-
-#navigation{
-  background-color:#bfbfbf;
-  border-radius:25px;
-  margin:2px;
-  padding:15px;
-}
+/* gallery */
 
 #gallery img{
   height: 350px;
@@ -69,4 +75,14 @@ body {
   padding:7px;
   margin:4px;
   border-radius:15px;
+}
+
+/* 2048 */
+
+.scores {
+  float: right;
+}
+
+.score {
+  background-color: #bbada0;
 }
