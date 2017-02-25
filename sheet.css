@@ -79,12 +79,23 @@ body {
 
 /* 2048 */
 
-.3bars {
-  
+#wholeGame {
+  background-color:#65e6d9;
+  padding:15px;
+  border-radius:15px;
 }
 
-.scoreBoard {
-  height:100px;
+.threeBars {
+  width: 236px;
+  float: left;
+  padding-bottom: 45px;
+}
+
+#scoreBoard {
+  height:125px;
+  background-color:#ffd280;
+  border:3px solid;
+  border-radius:25px;
 }
 
 .score {
