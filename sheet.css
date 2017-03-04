@@ -5,14 +5,21 @@ body {
   background-image:url("http://i.imgur.com/hgVJGW5.png");
 }
 
-#container{
+.container{
   background-color:#40e0d0;
   border-radius:25px;
   margin-left:250px;
   margin-right:250px;
   margin-top:20px;
   margin-bottom:20px;
-  padding:20px; 
+  padding:20px;
+}
+
+#container2048{
+  min-width:776px;
+  max-width:776px;
+  min-height:682px;
+  max-height:682px;
 }
 
 #navigation{
@@ -20,6 +27,10 @@ body {
   border-radius:25px;
   margin:2px;
   padding:15px;
+  min-width:744px;
+  max-width:744px;
+  min-height:22px;
+  max-height:22px;
 }
 
 .list { 
@@ -83,19 +94,29 @@ body {
   background-color:#65e6d9;
   padding:15px;
   border-radius:15px;
+  min-width:745px;
+  max-width:745px;
+  min-height:596px;
+  max-height:596px;
 }
 
 .threeBars {
-  width: 236px;
   float: left;
   padding-bottom: 45px;
+  min-width: 246px;
+  max-width: 246px;
+  min-height:141px;
+  max-height:141px;
 }
 
 #scoreBoard {
-  height:125px;
   background-color:#ffd280;
   border:3px solid;
   border-radius:25px;
+  min-width:738px;
+  max-width:738px;
+  min-height:140px;
+  max-height:140px;
 }
 
 .score {
@@ -108,11 +129,13 @@ body {
   width:100px;
 }
 
-#2048Board {
+#board2048 {
   margin-left:auto;
   margin-right:auto;
-  width:410px;
-  height:410px;
+  min-width:425px;
+  max-width:425px;
+  min-height:435px;
+  max-height:435px;
 }
 
 .scores{
@@ -124,6 +147,10 @@ body {
   padding-bottom:10px;
   background-color:#bbada0;
   border-radius:7px;
+  min-width:35px;
+  max-width:35px;
+  min-height:36px;
+  max-height:36px;
 }
 
 
