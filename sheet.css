@@ -153,6 +153,12 @@ body {
   max-height:36px;
 }
 
+#game2048{
+  min-width:424px;
+  max-width:424px;
+  min-height:424px;
+  max-height:424px;
+}
 
 
 
