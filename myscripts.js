@@ -46,9 +46,11 @@ function checkAnswer(){
 }
 
 //Gallery
-var pics = ["http://img.kpopmap.com/2015/11/2015-bts-v-legendary-picture-2.jpg",
-            "http://68.media.tumblr.com/871f03b589d571aecdf8a571f312cbdf/tumblr_inline_nny1p7apHQ1qze0xk_400.jpg",
-            "http://cdn0.dailydot.com/cache/be/da/bedacffded0c1c2e1772f3bf9cac925b.jpg"
+var pics = ["http://imgur.com/FSNA2fM",
+            "http://imgur.com/UYHfscz",
+            "http://imgur.com/y9lMViM",
+            "http://imgur.com/RB01I2n",
+            "http://imgur.com/EprwnFu"
            ];
 var picIndex = 0;
 

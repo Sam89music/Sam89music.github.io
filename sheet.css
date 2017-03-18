@@ -16,10 +16,59 @@ body {
 }
 
 #container2048{
-  min-width:776px;
-  max-width:776px;
+  min-width:778px;
+  max-width:778px;
   min-height:682px;
   max-height:682px;
+}
+
+#containerIndex{
+  min-width:778px;
+  max-width:778px;
+  min-height:527px;
+  max-height:527px;
+}
+
+#containerAboutMe{
+  min-width:778px;
+  max-width:778px;
+  min-height:1601px;
+  max-height:1601px;
+}
+
+#containerBTS{
+  min-width:778px;
+  max-width:778px;
+  min-height:2262px;
+  max-height:2262px;
+}
+
+#containerProjects{
+  min-width:778px;
+  max-width:778px;
+  min-height:336px;
+  max-height:336px;
+}
+
+#containerFlashcard{
+  min-width:778px;
+  max-width:778px;
+  min-height:383px;
+  min-height:383px;
+}
+
+#containerGallery{
+  min-width:778px;
+  max-width:778px;
+  min-height:477px;
+  max-height:477px;
+}
+
+#containerTicktactoe{
+  min-width:778px;
+  max-width:778px;
+  min-height:625px;
+  max-height:625px;
 }
 
 #navigation{
