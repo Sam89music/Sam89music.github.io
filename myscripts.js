@@ -46,11 +46,11 @@ function checkAnswer(){
 }
 
 //Gallery
-var pics = ["http://imgur.com/FSNA2fM",
-            "http://imgur.com/UYHfscz",
-            "http://imgur.com/y9lMViM",
-            "http://imgur.com/RB01I2n",
-            "http://imgur.com/EprwnFu"
+var pics = ["http://imgur.com/FSNA2fM.jpg",
+            "http://imgur.com/UYHfscz.jpg",
+            "http://imgur.com/y9lMViM.jpg",
+            "http://imgur.com/RB01I2n.jpg",
+            "http://imgur.com/EprwnFu.jpg"
            ];
 var picIndex = 0;
 
