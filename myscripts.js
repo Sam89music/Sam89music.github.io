@@ -50,7 +50,8 @@ var pics = ["http://imgur.com/FSNA2fM.jpg",
             "http://imgur.com/UYHfscz.jpg",
             "http://imgur.com/y9lMViM.jpg",
             "http://imgur.com/RB01I2n.jpg",
-            "http://imgur.com/EprwnFu.jpg"
+            "http://imgur.com/EprwnFu.jpg",
+            "http://i.imgur.com/Un4c1k1.jpg"
            ];
 var picIndex = 0;
 
