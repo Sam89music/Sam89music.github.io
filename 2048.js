@@ -48,6 +48,22 @@ function spawnPlace(){
   }
 }
 
+function buttons(){
+  var keycode = event.keyCode; 
+  if (keycode == 38){
+    alert ("up");
+  }
+  if (keycode == 40){
+    alert ("down");
+  }
+  if (keycode == 39){
+    alert ("right");
+  }
+  if (keycode == 37){
+    alert ("left");
+  }
+}
+
 //get random numbers
 function getRandomNum(min, max){
   return Math.floor(Math.random() * max) + min;
