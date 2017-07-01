@@ -186,7 +186,6 @@ function moveLeft(){
             document.getElementById("row" + i + "col" + j).innerHTML=sum;
             //change element below with empty string
             document.getElementById("row" + i + "col" + (j + 1)).innerHTML="";
-            
           }
         }
       }
@@ -233,11 +232,19 @@ function spawnNumberAfterTurn(){
   var row = getRandomNum(1,4);
   var col = getRandomNum(1,4);
   
-  var spawnNum = spawnNumber();
   var location = 'row' + row + 'col' + col;
   
-  document.getElementById(location).innerHTML=spawnNum;
- 
+  var element = document.getElementById("row" + row + "col" + col).innerHTML;
+  
+  if(element === ""){
+    
+      var spawnNum = spawnNumber();
+      document.getElementById(location).innerHTML=spawnNum;
+    }
+    else{
+      
+      spawnNumberAfterTurn();
+    }
 }
 
 

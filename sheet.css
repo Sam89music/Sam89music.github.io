@@ -151,7 +151,7 @@ body {
 
 .threeBars {
   float: left;
-  padding-bottom: 45px;
+  padding-bottom: 10px;
   min-width: 246px;
   max-width: 246px;
   min-height:141px;
@@ -209,6 +209,10 @@ body {
   max-height:424px;
 }
 
+#keybox{
+  width:400; 
+  height:25;
+}
 
 
 
