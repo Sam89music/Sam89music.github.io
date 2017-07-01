@@ -3,6 +3,15 @@ var globalCol2 = 0;
 var globalRow2 = 0;
 var globalCol2 = 0;
 var firstTime = false;
+var pressedKey = 0;
+
+document.onkeydown = function (e) {
+  pressedKey = e.keyCode;
+  
+  buttons(pressedKey);
+  
+  colors();
+}
 
 function onLoad(){
   spawnPlace();
@@ -11,7 +20,7 @@ function onLoad(){
     spawnPlace();
   }
   
-  document.getElementById("keyBox").focus();
+  //document.getElementById("keyBox").focus();
 }
 
 //spawns numbers 2 or 4
@@ -57,8 +66,8 @@ function getRandomNum(min, max){
 }
 
 //detects button pressed
-function buttons(){
-  var keycode = event.keyCode; 
+function buttons(keycode){
+//  var keycode = event.keyCode; 
   if (keycode == 38){
     //alert ("up");
     moveUp();
@@ -232,7 +241,7 @@ function spawnNumberAfterTurn(){
   var row = getRandomNum(1,4);
   var col = getRandomNum(1,4);
   
-  var location = 'row' + row + 'col' + col;
+  var location = "row" + row + "col" + col;
   
   var element = document.getElementById("row" + row + "col" + col).innerHTML;
   
@@ -247,7 +256,62 @@ function spawnNumberAfterTurn(){
     }
 }
 
-
+function colors(){
+  
+  var sum = 0;
+  var box = "";
+  var numS = "";
+  for(var j = 1; j <= 4; j++){
+    for(var i = 1; i <= 4; i++){
+        box = "row" + j + "col" + i;
+        numS = document.getElementById(box).innerHTML;
+      
+           if(numS !== ""){
+            sum = parseInt(numS);
+            if(sum === 2){
+               document.getElementById(box).style.backgroundColor="#ffffff";
+            }
+            if(sum === 4){
+               document.getElementById(box).style.backgroundColor="#ffffcc";
+            }
+            if(sum === 8){
+               document.getElementById(box).style.backgroundColor="#ffc14d";
+            }
+            if(sum === 16){
+               document.getElementById(box).style.backgroundColor="#ff6600";
+            }
+            if(sum === 32){
+               document.getElementById(box).style.backgroundColor="#ff5c33";
+            }
+            if(sum === 64){
+               document.getElementById(box).style.backgroundColor="red";
+            }
+            if(sum === 128){
+               document.getElementById(box).style.backgroundColor="gold";
+            }
+            if(sum === 256){
+               document.getElementById(box).style.backgroundColor="#ffff66"
+            }
+            if(sum === 512){
+               document.getElementById(box).style.backgroundColor="yellow"
+            }
+            if(sum === 1024){
+               document.getElementById(box).style.backgroundColor="#ffcc1a"
+            }
+            if(sum === 2048){
+               document.getElementById(box).style.backgroundColor="#ff9933"
+            }
+         }
+         else{
+           //#d2f9f5
+           document.getElementById(box).style.backgroundColor="#d2f2f5";
+           document.getElementById(box).style.color="black";
+         }
+        
+         document.getElementById(box).style.borderColor="black";
+      }
+   }
+}
 
 
 
