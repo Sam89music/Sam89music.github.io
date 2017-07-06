@@ -270,52 +270,52 @@ function colors(){
             sum = parseInt(numS);
             if(sum === 2){
                document.getElementById(box).style.backgroundColor="#eee4da";
-               document.getElementById(box).style.fontsize="55px";
+               document.getElementById(box).style.fontSize="55px";
             }
             if(sum === 4){
                document.getElementById(box).style.backgroundColor="#ede0c8";
-               document.getElementById(box).style.fontsize="55px";
+               document.getElementById(box).style.fontSize="55px";
             }
             if(sum === 8){
                document.getElementById(box).style.backgroundColor="#f2b179";
-               document.getElementById(box).style.fontsize="55px";
+               document.getElementById(box).style.fontSize="55px";
             }
             if(sum === 16){
                document.getElementById(box).style.backgroundColor="#f59563";
-               document.getElementById(box).style.fontsize="55px";
+               document.getElementById(box).style.fontSize="55px";
             }
             if(sum === 32){
                document.getElementById(box).style.backgroundColor="#f67c5f";
-               document.getElementById(box).style.fontsize="55px";
+               document.getElementById(box).style.fontSize="55px";
             }
             if(sum === 64){
                document.getElementById(box).style.backgroundColor="#f65e3b";
-               document.getElementById(box).style.fontsize="55px";
+               document.getElementById(box).style.fontSize="55px";
             }
             if(sum === 128){
                document.getElementById(box).style.backgroundColor="#edcf72";
                document.getElementById(box).style.boxShadow="0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286)";
-               document.getElementById(box).style.fontsize="45px";
+               document.getElementById(box).style.fontSize="45px";
             }
             if(sum === 256){
                document.getElementById(box).style.backgroundColor="#edcc61"
                document.getElementById(box).style.boxShadow="0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048)";
-               document.getElementById(box).style.fontsize="45px";
+               document.getElementById(box).style.fontSize="45px";
             }
             if(sum === 512){
                document.getElementById(box).style.backgroundColor="#edc850";
                document.getElementById(box).style.boxShadow="0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381)";
-               document.getElementById(box).style.fontsize="45px";
+               document.getElementById(box).style.fontSize="45px";
             }
             if(sum === 1024){
                document.getElementById(box).style.backgroundColor="#edc53f";
                document.getElementById(box).style.boxShadow="0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571)";
-               document.getElementById(box).style.fontsize="35px";
+               document.getElementById(box).style.fontSize="35px";
             }
             if(sum === 2048){
                document.getElementById(box).style.backgroundColor="#edc22e";
                document.getElementById(box).style.boxShadow="0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333)";
-               document.getElementById(box).style.fontsize="35px";
+               document.getElementById(box).style.fontSize="35px";
             }
          }
          else{
