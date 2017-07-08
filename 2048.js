@@ -316,6 +316,7 @@ function colors(){
                document.getElementById(box).style.backgroundColor="#edc22e";
                document.getElementById(box).style.boxShadow="0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333)";
                document.getElementById(box).style.fontSize="35px";
+               win();
             }
          }
          else{
@@ -330,6 +331,8 @@ function colors(){
    }
 }
 
-
+function win(){
+  alert("Congratulation, You reached 2048!")
+}
 
 
