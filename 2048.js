@@ -4,6 +4,14 @@ var globalRow2 = 0;
 var globalCol2 = 0;
 var firstTime = false;
 var pressedKey = 0;
+var winFlag = false;
+/*var board = [
+                ["","","",""],
+                ["","","",""],
+                ["","","",""],
+                ["","","",""]
+            ]
+*/
 
 document.onkeydown = function (e) {
   pressedKey = e.keyCode;
@@ -19,7 +27,7 @@ function onLoad(){
   while(globalRow1 == globalRow2 && globalCol1 == globalCol2 || globalRow2 === 0 && globalCol2 === 0){
     spawnPlace();
   }
-  
+  colors();
   //document.getElementById("keyBox").focus();
 }
 
@@ -58,6 +66,8 @@ function spawnPlace(){
       globalRow2 = row;
       globalCol2 = col;
   }
+  //update board
+  //board[row][col] = "" + spawnNum;
 }
 
 //get random numbers
@@ -70,35 +80,66 @@ function buttons(keycode){
 //  var keycode = event.keyCode; 
   if (keycode == 38){
     //alert ("up");
-    moveUp();
-    moveUp();
-    moveUp();
+    moveUp(1);
+    moveUp(2);
+    moveUp(3);
     spawnNumberAfterTurn();
   }
   if (keycode == 40){
     //alert ("down");
-    moveDown();
-    moveDown();
-    moveDown();
+    moveDown(1);
+    moveDown(2);
+    moveDown(3);
     spawnNumberAfterTurn();
   }
   if (keycode == 39){
     //alert ("right");
-    moveRight();
-    moveRight();
-    moveRight();
+    moveRight(1);
+    moveRight(2);
+    moveRight(3);
     spawnNumberAfterTurn();
   }
   if (keycode == 37){
     //alert ("left");
-    moveLeft();
-    moveLeft();
-    moveLeft();
+    moveLeft(1);
+    moveLeft(2);
+    moveLeft(3);
     spawnNumberAfterTurn();
   }
 }
 
-function moveUp(){
+/*
+function tryAdding(direction){
+
+   
+  
+}
+
+function downAdd(){
+  
+  var element;
+  var nextElement;
+  //loop thru row starting from bottom row
+  for(var i = 3; i > 0; i--){
+    //loops thru each element in row
+    for(var j = 0; j < 4; j++){
+       
+      //number of interest
+      element = board[i][j];
+      //number to compare
+      nextElement = [i - 1][j];
+      
+      //if the numbers are the same, the add
+      if(element === nextElement){
+        
+      }
+    }
+  }
+}
+*/
+
+
+function moveUp(turn){
   
   var canMove = true;
   
@@ -109,6 +150,14 @@ function moveUp(){
         //element of focus
         var element = document.getElementById("row" + j + "col" + i).innerHTML;
         var elementBelow = document.getElementById("row" + (j + 1) + "col" + i).innerHTML;
+        var oElement1 = "";
+        var oElement2 = "";
+        
+        if(j < 2){
+          // othe elements to consider
+          oElement1 = document.getElementById("row" + (j + 2) + "col" + i).innerHTML;
+          oElement2 = document.getElementById("row" + (j + 3) + "col" + i).innerHTML;
+        }
         
       //if there is nothing inside element, move the one below up
       if(element === ""){
@@ -120,7 +169,8 @@ function moveUp(){
           canMove = false;
           
           //if the numbers are the same then add them
-          if(element === elementBelow){
+          //and if its the first turn,
+          if(element === elementBelow && turn === 3){
             //add elements because they match
             var sum = parseInt(element) + parseInt(elementBelow);
             //put sum into the element above
@@ -128,6 +178,12 @@ function moveUp(){
             //change element below with empty string
             document.getElementById("row" + (j + 1) + "col" + i).innerHTML="";
             
+            if(oElement1 === oElement2 && oElement1 !== ""){
+              sum = parseInt(oElement1) + parseInt(oElement2);
+              document.getElementById("row" + (j + 1) + "col" + i).innerHTML = sum;
+              document.getElementById("row" + (j + 2) + "col" + i).innerHTML = "";
+              document.getElementById("row" + (j + 3) + "col" + i).innerHTML = "";
+            }
           }
         }
       }
@@ -135,7 +191,7 @@ function moveUp(){
   }
 }
 
-function moveDown(){
+function moveDown(turn){
   
   var canMove = true;
   
@@ -144,7 +200,15 @@ function moveDown(){
       for(var i = 4; i >= 1; i--){
         var element = document.getElementById("row" + j + "col" + i).innerHTML;
         var elementBelow = document.getElementById("row" + (j - 1) + "col" + i).innerHTML;
-
+        var oElement1 = "";
+        var oElement2 = "";
+        
+        if(j > 3){
+          // othe elements to consider
+          oElement1 = document.getElementById("row" + (j - 2) + "col" + i).innerHTML;
+          oElement2 = document.getElementById("row" + (j - 3) + "col" + i).innerHTML;
+        }
+        
       if(element === ""){
           
           document.getElementById("row" + j + "col" + i).innerHTML = elementBelow;
@@ -154,7 +218,7 @@ function moveDown(){
           canMove = false;
           
           //if the numbers are the same then add them
-          if(element === elementBelow){
+          if(element === elementBelow && turn === 3){
             //add elements because they match
             var sum = parseInt(element) + parseInt(elementBelow);
             //put sum into the element above
@@ -162,6 +226,12 @@ function moveDown(){
             //change element below with empty string
             document.getElementById("row" + (j - 1) + "col" + i).innerHTML="";
             
+            if(oElement1 === oElement2 && oElement1 !== ""){
+              sum = parseInt(oElement1) + parseInt(oElement2);
+              document.getElementById("row" + (j - 1) + "col" + i).innerHTML = sum;
+              document.getElementById("row" + (j - 2) + "col" + i).innerHTML = "";
+              document.getElementById("row" + (j - 3) + "col" + i).innerHTML = "";
+            }
           }  
         }
       }
@@ -169,7 +239,7 @@ function moveDown(){
   }
 }
 
-function moveLeft(){
+function moveLeft(turn){
   
   var canMove = true;
   
@@ -178,8 +248,16 @@ function moveLeft(){
       for(var i = 1; i <= 4; i++){
         var element = document.getElementById("row" + i + "col" + j).innerHTML;
         var elementBelow = document.getElementById("row" + i + "col" + (j + 1)).innerHTML;
-
-      if(element === ""){
+        var oElement1 = "";
+        var oElement2 = "";
+        
+        if(j < 2){
+          // othe elements to consider
+          oElement1 = document.getElementById("row" + i + "col" + (j + 2)).innerHTML;
+          oElement2 = document.getElementById("row" + i + "col" + (j + 3)).innerHTML;
+        } 
+        
+      if(element === ""){ 
           
           document.getElementById("row" + i + "col" + j).innerHTML = elementBelow;
           document.getElementById("row" + i + "col" + (j + 1)).innerHTML = "";
@@ -188,13 +266,20 @@ function moveLeft(){
           canMove = false;
           
           //if the numbers are the same then add them
-          if(element === elementBelow){
+          if(element === elementBelow && turn === 3){
             //add elements because they match
             var sum = parseInt(element) + parseInt(elementBelow);
             //put sum into the element above
             document.getElementById("row" + i + "col" + j).innerHTML=sum;
             //change element below with empty string
             document.getElementById("row" + i + "col" + (j + 1)).innerHTML="";
+            
+            if(oElement1 === oElement2 && oElement1 !== ""){
+              sum = parseInt(oElement1) + parseInt(oElement2);
+              document.getElementById("row" + i + "col" + (j + 1)).innerHTML = sum;
+              document.getElementById("row" + i + "col" + (j + 2)).innerHTML = "";
+              document.getElementById("row" + i + "col" + (j + 3)).innerHTML = "";
+            }
           }
         }
       }
@@ -202,7 +287,7 @@ function moveLeft(){
   }
 }
 
-function moveRight(){
+function moveRight(turn){
   
   var canMove = true;
   
@@ -211,7 +296,14 @@ function moveRight(){
       for(var i = 4; i >= 1; i--){
         var element = document.getElementById("row" + i + "col" + j).innerHTML;
         var elementBelow = document.getElementById("row" + i + "col" + (j - 1)).innerHTML;
-
+        var oElement1 = "";
+        var oElement2 = "";
+        
+        if(j > 3){
+          // othe elements to consider
+          oElement1 = document.getElementById("row" + i + "col" + (j - 2)).innerHTML;
+          oElement2 = document.getElementById("row" + i + "col" + (j - 3)).innerHTML;
+        }
       if(element === ""){
           
           document.getElementById("row" + i + "col" + j).innerHTML = elementBelow;
@@ -221,7 +313,7 @@ function moveRight(){
           canMove = false;
           
           //if the numbers are the same then add them
-          if(element === elementBelow){
+          if(element === elementBelow && turn === 3){
             //add elements because they match
             var sum = parseInt(element) + parseInt(elementBelow);
             //put sum into the element above
@@ -229,13 +321,19 @@ function moveRight(){
             //change element below with empty string
             document.getElementById("row" + i + "col" + (j - 1)).innerHTML="";
             
+            if(oElement1 === oElement2 && oElement1 !== ""){
+              sum = parseInt(oElement1) + parseInt(oElement2);
+              document.getElementById("row" + i + "col" + (j - 1)).innerHTML = sum;
+              document.getElementById("row" + i + "col" + (j - 2)).innerHTML = "";
+              document.getElementById("row" + i + "col" + (j - 3)).innerHTML = "";
+            }
           }
         }
       }
     }
   }
 }
-
+  
 function spawnNumberAfterTurn(){
   
   var row = getRandomNum(1,4);
@@ -249,6 +347,7 @@ function spawnNumberAfterTurn(){
     
       var spawnNum = spawnNumber();
       document.getElementById(location).innerHTML=spawnNum;
+      //board[row][col] = "" + spawnNum;
     }
     else{
       
@@ -316,14 +415,17 @@ function colors(){
                document.getElementById(box).style.backgroundColor="#edc22e";
                document.getElementById(box).style.boxShadow="0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333)";
                document.getElementById(box).style.fontSize="35px";
-               win();
+               if(winFlag === false){
+                 win();
+                 winFlag = true;
+               }
             }
          }
          else{
            //#d2f9f5
            document.getElementById(box).style.backgroundColor="#d2f2f5";
            document.getElementById(box).style.color="black";
-           document.getElementById(box).style.boxShadow="none";
+           document.getElementById(box).style.boxShadow="0";
          }
         
          document.getElementById(box).style.borderColor="black";
@@ -332,7 +434,7 @@ function colors(){
 }
 
 function win(){
-  alert("Congratulation, You reached 2048!")
+  alert("Congratulation, You reached 2048!");
 }
 
 
