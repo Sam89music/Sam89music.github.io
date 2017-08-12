@@ -5,20 +5,78 @@ var globalCol2 = 0;
 var firstTime = false;
 var pressedKey = 0;
 var winFlag = false;
-/*var board = [
+var before = [
                 ["","","",""],
                 ["","","",""],
                 ["","","",""],
                 ["","","",""]
-            ]
-*/
+            ];
+var after = [
+                ["","","",""],
+                ["","","",""],
+                ["","","",""],
+                ["","","",""]
+            ];
 
+//gets the value of every box on the board
+function updateBoardState(boardState){
+  for(var j = 1; j < 4; j++){
+      for(var i = 1; i < 4; i++){
+         if(boardState === "before"){
+            before[i][j] = document.getElementById("row" + (i + 1) + "col" + (j + 1)).innerHTML;
+            }
+         else
+            after[i][j] = document.getElementById("row" + (i + 1) + "col" + (j + 1)).innerHTML;
+            }
+         //console.log(before[i][j]);
+    }
+  }
+
+function equalStates(){
+  
+  for(var j = 1; j < 4; j++){
+    for(var i = 1; i < 4; i++){
+      if(before[i][j] !== after[i][j]){
+          return false;
+        
+      }
+    }
+  }
+  return true;
+}
+
+function printBoard(){
+  var board = "before:";
+  var i, j;
+  for(j = 1; j < 4; j++){
+    for(i = 1; i < 4; i++){
+      board = board + before[i][j] + "";
+    }
+    board = board + "\n";
+  }
+  console.log(board);
+  
+  board = "after:";
+   for(j = 1; j < 4; j++){
+    for(i = 1; i < 4; i++){
+      board = board + before[i][j] + "";
+    }
+    board = board + "\n";
+   }
+   console.log(board);
+}
+
+//handles every pressed key
 document.onkeydown = function (e) {
   pressedKey = e.keyCode;
+  
+  updateBoardState("before");
   
   buttons(pressedKey);
   
   colors();
+  
+  updateBoardState("after");
 }
 
 function onLoad(){
@@ -28,7 +86,6 @@ function onLoad(){
     spawnPlace();
   }
   colors();
-  //document.getElementById("keyBox").focus();
 }
 
 //spawns numbers 2 or 4
@@ -66,8 +123,27 @@ function spawnPlace(){
       globalRow2 = row;
       globalCol2 = col;
   }
-  //update board
-  //board[row][col] = "" + spawnNum;
+}
+
+function spawnNumberAfterTurn(){
+  
+  var row = getRandomNum(1,4);
+  var col = getRandomNum(1,4);
+  
+  var location = "row" + row + "col" + col;
+  
+  var element = document.getElementById("row" + row + "col" + col).innerHTML;
+  
+  if(element === ""){
+    
+      var spawnNum = spawnNumber();
+      document.getElementById(location).innerHTML=spawnNum;
+      //board[row][col] = "" + spawnNum;
+    }
+    else{
+      
+      spawnNumberAfterTurn();
+    }
 }
 
 //get random numbers
@@ -83,61 +159,34 @@ function buttons(keycode){
     moveUp(1);
     moveUp(2);
     moveUp(3);
-    spawnNumberAfterTurn();
+    //spawnNumberAfterTurn();
   }
   if (keycode == 40){
     //alert ("down");
     moveDown(1);
     moveDown(2);
     moveDown(3);
-    spawnNumberAfterTurn();
+    //spawnNumberAfterTurn();
   }
   if (keycode == 39){
     //alert ("right");
     moveRight(1);
     moveRight(2);
     moveRight(3);
-    spawnNumberAfterTurn();
+    //spawnNumberAfterTurn();
   }
   if (keycode == 37){
     //alert ("left");
     moveLeft(1);
     moveLeft(2);
     moveLeft(3);
+    //spawnNumberAfterTurn();
+  }
+  
+  if(!equalStates()){
     spawnNumberAfterTurn();
   }
 }
-
-/*
-function tryAdding(direction){
-
-   
-  
-}
-
-function downAdd(){
-  
-  var element;
-  var nextElement;
-  //loop thru row starting from bottom row
-  for(var i = 3; i > 0; i--){
-    //loops thru each element in row
-    for(var j = 0; j < 4; j++){
-       
-      //number of interest
-      element = board[i][j];
-      //number to compare
-      nextElement = [i - 1][j];
-      
-      //if the numbers are the same, the add
-      if(element === nextElement){
-        
-      }
-    }
-  }
-}
-*/
-
 
 function moveUp(turn){
   
@@ -333,27 +382,7 @@ function moveRight(turn){
     }
   }
 }
-  
-function spawnNumberAfterTurn(){
-  
-  var row = getRandomNum(1,4);
-  var col = getRandomNum(1,4);
-  
-  var location = "row" + row + "col" + col;
-  
-  var element = document.getElementById("row" + row + "col" + col).innerHTML;
-  
-  if(element === ""){
-    
-      var spawnNum = spawnNumber();
-      document.getElementById(location).innerHTML=spawnNum;
-      //board[row][col] = "" + spawnNum;
-    }
-    else{
-      
-      spawnNumberAfterTurn();
-    }
-}
+
 
 function colors(){
   
