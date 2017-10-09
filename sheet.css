@@ -2,7 +2,8 @@
 
 body {
   text-align:center; 
-  background-image:url("http://i.imgur.com/hgVJGW5.png");
+  /*background-image:url("https://i.imgur.com/LkJuxOh.jpg?2");*/
+  background-image:url("https://i.imgur.com/zqYz8hV.jpg");
 }
 
 .container{
@@ -25,18 +26,18 @@ body {
 #containerIndex{
   min-width:778px;
   max-width:778px;
-  min-height:527px;
-  max-height:527px;
+  min-height:590px;
+  max-height:590px;
 }
 
-#containerAboutMe{
+#containerHobbies{
   min-width:778px;
   max-width:778px;
   min-height:1601px;
   max-height:1601px;
 }
 
-#containerBTS{
+#containerAboutMe{
   min-width:778px;
   max-width:778px;
   min-height:2262px;

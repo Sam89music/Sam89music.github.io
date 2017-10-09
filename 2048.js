@@ -4,6 +4,7 @@ var globalRow2 = 0;
 var globalCol2 = 0;
 var firstTime = false;
 var pressedKey = 0;
+var moveCount = 0;
 var winFlag = false;
 var before = [
                 ["","","",""],
@@ -18,57 +19,76 @@ var after = [
                 ["","","",""]
             ];
 
+//checks if every element is filled with a number
+function checkFull(){
+  for(var j = 0; j < 4; j++){
+      for(var i = 0; i < 4; i++){
+      }
+   }
+}
+
 //gets the value of every box on the board
 function updateBoardState(boardState){
-  for(var j = 1; j < 4; j++){
-      for(var i = 1; i < 4; i++){
+  for(var j = 0; j < 4; j++){
+      for(var i = 0; i < 4; i++){
          if(boardState === "before"){
             before[i][j] = document.getElementById("row" + (i + 1) + "col" + (j + 1)).innerHTML;
             }
-         else
+         else{
             after[i][j] = document.getElementById("row" + (i + 1) + "col" + (j + 1)).innerHTML;
             }
          //console.log(before[i][j]);
+      }
     }
+  if(boardState == "before"){
+    printBeforeBoard();
   }
-
+  else{
+    printAfterBoard();
+  }
+}
 function equalStates(){
-  
-  for(var j = 1; j < 4; j++){
-    for(var i = 1; i < 4; i++){
-      if(before[i][j] !== after[i][j]){
-          return false;
-        
+    for(j = 0; j < 4; j++){
+      for(i = 0; i < 4; i++){
+        if(before[i][j] !== after[i][j]){  
+    return false;
       }
     }
   }
   return true;
 }
 
-function printBoard(){
-  var board = "before:";
-  var i, j;
-  for(j = 1; j < 4; j++){
-    for(i = 1; i < 4; i++){
-      board = board + before[i][j] + "";
-    }
-    board = board + "\n";
-  }
-  console.log(board);
-  
-  board = "after:";
-   for(j = 1; j < 4; j++){
-    for(i = 1; i < 4; i++){
-      board = board + before[i][j] + "";
+function printAfterBoard(){
+   var board = "after:";
+   for(j = 0; j < 4; j++){
+    for(i = 0; i < 4; i++){
+      board = board + after[i][j] + "";
     }
     board = board + "\n";
    }
    console.log(board);
 }
 
+function printBeforeBoard(){
+  var board = "before:";
+  var i, j;
+  for(j = 0; j < 4; j++){
+    for(i = 0; i < 4; i++){
+      board = board + before[i][j] + "";
+    }
+    board = board + "\n";
+  }
+  console.log(board);
+  
+}
+
 //handles every pressed key
 document.onkeydown = function (e) {
   pressedKey = e.keyCode;
+  
+  moveCount++;
+  
+  console.log("Move: " + moveCount);
   
   updateBoardState("before");
   
@@ -77,6 +97,14 @@ document.onkeydown = function (e) {
   colors();
   
   updateBoardState("after");
+  
+  if(!equalStates()){
+    spawnNumberAfterTurn();
+    console.log("Boards do not equal")
+  }
+  
+  colors();
+  
 }
 
 function onLoad(){
@@ -182,10 +210,12 @@ function buttons(keycode){
     moveLeft(3);
     //spawnNumberAfterTurn();
   }
-  
+  /*
   if(!equalStates()){
     spawnNumberAfterTurn();
+    console.log("Boards do not equal")
   }
+  */
 }
 
 function moveUp(turn){
