@@ -2,12 +2,12 @@
 
 body {
   text-align:center; 
-  /*background-image:url("https://i.imgur.com/LkJuxOh.jpg?2");*/
-  background-image:url("https://i.imgur.com/zqYz8hV.jpg");
+  background-image:url("https://i.imgur.com/LkJuxOh.jpg?2");
+  /*background-image:url("https://i.imgur.com/zqYz8hV.jpg");*/
 }
 
 .container{
-  background-color:#40e0d0;
+  background-color:#C00000;
   border-radius:25px;
   margin-left:250px;
   margin-right:250px;
@@ -73,7 +73,7 @@ body {
 }
 
 #navigation{
-  background-color:#bfbfbf;
+  background-color:darkgray;
   border-radius:25px;
   margin:2px;
   padding:15px;
