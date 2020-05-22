@@ -231,6 +231,7 @@ function moveUp(turn){
         var elementBelow = document.getElementById("row" + (j + 1) + "col" + i).innerHTML;
         var oElement1 = "";
         var oElement2 = "";
+        console.log(element);
         
         if(j < 2){
           // othe elements to consider
